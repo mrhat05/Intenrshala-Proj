@@ -1,0 +1,68 @@
+@import "tailwindcss";
+
+:root {
+  --background: #07111f;
+  --foreground: #e8eef8;
+  --panel: rgba(9, 18, 34, 0.82);
+  --panel-strong: rgba(13, 25, 47, 0.96);
+  --line: rgba(149, 170, 204, 0.18);
+  --accent: #7dd3fc;
+  --accent-strong: #38bdf8;
+  --muted: #94a3b8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--foreground);
+  font-family: var(--font-body), "IBM Plex Sans", sans-serif;
+  background:
+    radial-gradient(circle at top left, rgba(56, 189, 248, 0.18), transparent 28%),
+    radial-gradient(circle at top right, rgba(20, 184, 166, 0.15), transparent 24%),
+    linear-gradient(180deg, #05101d 0%, #091522 50%, #07111f 100%);
+}
+
+@layer components {
+  .field {
+    width: 100%;
+    border-radius: 1rem;
+    border: 1px solid rgba(148, 163, 184, 0.18);
+    background: rgba(8, 15, 28, 0.78);
+    padding: 0.95rem 1rem;
+    color: var(--foreground);
+    outline: none;
+    transition:
+      border-color 150ms ease,
+      box-shadow 150ms ease,
+      background-color 150ms ease;
+  }
+
+  .field::placeholder {
+    color: rgba(148, 163, 184, 0.75);
+  }
+
+  .field:focus {
+    border-color: rgba(125, 211, 252, 0.6);
+    box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.16);
+    background: rgba(8, 15, 28, 0.94);
+  }
+}
+
+h1,
+h2,
+h3,
+.font-heading {
+  font-family: var(--font-heading), "Space Grotesk", sans-serif;
+}
+
+::selection {
+  background: rgba(125, 211, 252, 0.35);
+}
